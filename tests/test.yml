@@ -1,5 +1,6 @@
 ---
 - name: Demo Web
   hosts: localhost
-  roles:
-    - demoweb
+  tasks:
+    - name: Demo Web Start
+      ansible.builtin.include_role: demoweb
