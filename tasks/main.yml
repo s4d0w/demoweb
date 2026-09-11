@@ -3,7 +3,7 @@
 - name: Check the platform
   ansible.builtin.debug:
     msg: "[  FAIL ] RedHat 계열에만 설치 가능함. 다른 플랫폼에는 설치 불가능."
-  failed_when: ansible_distribution != "CentOS"
+  failed_when: ansible_facts["distribution"] != "CentOS"
 
 - name: Install web packages
   ansible.builtin.dnf:
